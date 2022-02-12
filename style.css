@@ -54,7 +54,7 @@ body{
     border: var(--white-color) 2px solid;
     background: var(--gray-color);
     padding-left: 30px;
-    font-size: 15px;
+    font-size: 17px;
     color: var(--white-color);
     transition: .3s linear;
 }
@@ -63,7 +63,7 @@ body{
 }
 
 .header-input::placeholder{
-    font-size: 15px;
+    font-size: 17px;
     font-family: 'Inter-Regular';
     color: var(--white-color);
 }
@@ -170,7 +170,7 @@ body{
     bottom: 0;
     padding: 30px 20px;
     box-sizing: border-box;
-    font-size: 15px;
+    font-size: 17px;
     font-family: 'Inter-Regular';
     bottom: -350px;
     opacity: 0;
