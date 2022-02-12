@@ -168,7 +168,7 @@ body{
     width: 100%;
     background: var(--black-color);
     bottom: 0;
-    padding: 30px 20px;
+    padding: 20px 20px;
     box-sizing: border-box;
     font-size: 17px;
     font-family: 'Inter-Regular';
@@ -190,6 +190,11 @@ body{
 
 .card-about-film p{
     padding: 10px 0;
+}
+
+.card-about-film p span{
+    font-family: 'Inter-Bold';;
+    color: var(--red-color);
 }
 
 .no-films{
