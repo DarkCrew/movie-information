@@ -4,18 +4,16 @@
 const searchText = document.querySelector('.header-input');
 const searchButton = document.querySelector('.header-search-button');
 const filmsContainer = document.querySelector('.films-container');
-const headerInput = document.querySelector('.header-input');
 let filmName = '';
-
 
 
 searchButton.addEventListener('click', toggleSearchButton);
 
-headerInput.addEventListener('click', function () {
+searchText.addEventListener('click', function () {
     searchButton.classList.remove('cross');
 });
 
-headerInput.addEventListener('keydown', function (e) {
+searchText.addEventListener('keydown', function (e) {
     if (e.keyCode === 13 && !(searchButton.classList.contains('cross'))) {
         toggleSearchButton();
         searchText.blur();
@@ -44,8 +42,8 @@ async function loadMovies(searchName) {
         console.log(data.Search);
         displayListFilms(data.Search);
 
-        
-    }else{
+
+    } else {
         filmsContainer.innerHTML = '';
         let noFilms = document.createElement('h2');
         noFilms.classList.add('no-films');
@@ -61,8 +59,8 @@ function displayListFilms(films) {
         filmItem.dataset.id = films[i].imdbID;
         filmItem.classList.add('film-card');
         let titleName = films[i].Title;
-        if ((films[i].Title).length > 40){
-            titleName = (films[i].Title).substring(0,40) + '...';
+        if ((films[i].Title).length > 40) {
+            titleName = (films[i].Title).substring(0, 40) + '...';
         }
         filmItem.innerHTML = `
             <div class="film-card-image">
@@ -101,7 +99,7 @@ function loadFilmRating() {
                 filmRating[i].appendChild(ratingNumber);
             }
 
-            
+
             cardAboutFilm[i].innerHTML = `
                 <h2 class="about-card-title">${dataFilm.Title}</h2>
                 <p>Year: ${dataFilm.Year}</p>
@@ -117,12 +115,21 @@ function loadFilmRating() {
     const filmCard = document.querySelectorAll('.film-card');
     const filmAboutInfo = document.querySelectorAll('.card-about-film');
 
-    for (let i = 0; i < filmCard.length; i++){
-        filmCard[i].addEventListener('mouseenter', function() {
+    for (let i = 0; i < filmCard.length; i++) {
+        filmCard[i].addEventListener('mouseenter', function () {
             filmAboutInfo[i].classList.add('show');
         });
-        filmCard[i].addEventListener('mouseleave', function() {
+        filmCard[i].addEventListener('mouseleave', function () {
             filmAboutInfo[i].classList.remove('show');
         });
     }
 }
+
+
+// media
+
+(function(){
+    if(window.innerWidth <= 768){
+        searchText.blur();
+    }
+}());
