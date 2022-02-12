@@ -128,5 +128,7 @@ function loadFilmRating() {
 (function(){
     if(window.innerWidth <= 768){
         searchText.blur();
-    } 
-}());
+    }else{
+        searchText.focus();
+    }
+}()); 
