@@ -1,5 +1,5 @@
 // https://www.omdbapi.com/?s=spider&apikey=d2643635
-// http://www.omdbapi.com/?i=tt0948470&apikey=d2643635
+// https://www.omdbapi.com/?i=tt0948470&apikey=d2643635
 
 const searchText = document.querySelector('.header-input');
 const searchButton = document.querySelector('.header-search-button');
@@ -92,7 +92,7 @@ function loadFilmRating() {
     for (let i = 0; i < listFilms.length; i++) {
         async function loadFilmInfo() {
             const currentFilmID = listFilms[i].dataset.id;
-            const resultFilm = await fetch(`http://www.omdbapi.com/?i=${currentFilmID}&apikey=d2643635`);
+            const resultFilm = await fetch(`https://www.omdbapi.com/?i=${currentFilmID}&apikey=d2643635`);
             const dataFilm = await resultFilm.json();
             if (dataFilm.imdbID === currentFilmID) {
                 let ratingNumber = document.createElement('h3');
