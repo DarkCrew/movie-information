@@ -214,6 +214,13 @@ body{
         flex-direction: column;
         justify-content: space-around;
     }
+
+    .no-films{
+        display: block;
+        height: auto;
+        text-align: center;
+        margin-top: 100px;
+    }
 }
 
 

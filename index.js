@@ -131,5 +131,14 @@ function loadFilmRating() {
 (function(){
     if(window.innerWidth <= 768){
         searchText.blur();
-    }
+
+        const filmCard = document.querySelectorAll('.film-card');
+        const filmAboutInfo = document.querySelectorAll('.card-about-film');
+
+        for (let i = 0; i < filmCard.length; i++) {
+            filmCard[i].addEventListener('click', function () {
+                filmAboutInfo[i].classList.toggle('show');
+            });
+        }
+    } 
 }());
