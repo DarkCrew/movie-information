@@ -75,7 +75,8 @@ function displayListFilms(films) {
                 <p></p>
                 <p></p>
                 <p></p>
-                <p></p>        
+                <p></p> 
+                <p class="about-card-rating"></p>       
             </div>
         `
         filmsContainer.appendChild(filmItem);
@@ -105,7 +106,7 @@ function loadFilmRating() {
                 <p>Year: ${dataFilm.Year}</p>
                 <p>Runtime: ${dataFilm.Runtime}</p>
                 <p>Country: ${dataFilm.Country}</p>
-                <p>BoxOffice: ${dataFilm.BoxOffice}</p>
+                <p>Rating: <span>${dataFilm.imdbRating}</span></p> 
             `;
             listFilms[i].appendChild(cardAboutFilm);
         }
@@ -121,6 +122,14 @@ function loadFilmRating() {
         });
     }
 }
+
+// for test
+const filmCard = document.querySelector('.film-card');
+const filmAboutInfo = document.querySelector('.card-about-film');
+
+filmCard.addEventListener('click', function () {
+    filmAboutInfo.classList.toggle('show');
+});      
 
 
 // media
