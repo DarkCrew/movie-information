@@ -116,11 +116,8 @@ function loadFilmRating() {
     const filmAboutInfo = document.querySelectorAll('.card-about-film');
 
     for (let i = 0; i < filmCard.length; i++) {
-        filmCard[i].addEventListener('mouseenter', function () {
-            filmAboutInfo[i].classList.add('show');
-        });
-        filmCard[i].addEventListener('mouseleave', function () {
-            filmAboutInfo[i].classList.remove('show');
+        filmCard[i].addEventListener('click', function () {
+            filmAboutInfo[i].classList.toggle('show');
         });
     }
 }
