@@ -206,6 +206,7 @@ body{
 }
 
 @media (max-width: 768px) {
+
     .header-container{
         padding: 20px 0;
         box-sizing: border-box;
