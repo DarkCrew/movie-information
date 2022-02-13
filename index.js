@@ -62,9 +62,11 @@ function displayListFilms(films) {
         if ((films[i].Title).length > 40) {
             titleName = (films[i].Title).substring(0, 40) + '...';
         }
+        const urlImage = films[i].Poster === 'N/A' ? './assets/img/no-image.jpg' : films[i].Poster;
+
         filmItem.innerHTML = `
             <div class="film-card-image">
-                <img src="${films[i].Poster}">
+                <img src="${urlImage}">
             </div>
             <div class="card-info">
                 <h2 class="card-title">${titleName}</h2>
@@ -96,17 +98,23 @@ function loadFilmRating() {
             if (dataFilm.imdbID === currentFilmID) {
                 let ratingNumber = document.createElement('h3');
                 ratingNumber.classList.add('card-rating-number');
-                ratingNumber.textContent = `${dataFilm.imdbRating}`;
+                const cardRating = dataFilm.imdbRating === 'N/A' ? '0.0' : dataFilm.imdbRating;
+                ratingNumber.textContent = `${cardRating}`;
                 filmRating[i].appendChild(ratingNumber);
             }
 
+            const title = dataFilm.Title === 'N/A' ? 'no info': dataFilm.Title;
+            const year = dataFilm.Year === 'N/A' ? 'no info': dataFilm.Year;
+            const runTime = dataFilm.Runtime === 'N/A' ? 'no info': dataFilm.Runtime;
+            const country = dataFilm.Country === 'N/A' ? 'no info': dataFilm.Country;
+            const rating = dataFilm.imdbRating === 'N/A' ? 'no info': dataFilm.imdbRating;
 
             cardAboutFilm[i].innerHTML = `
-                <h2 class="about-card-title">${dataFilm.Title}</h2>
-                <p>Year: ${dataFilm.Year}</p>
-                <p>Runtime: ${dataFilm.Runtime}</p>
-                <p>Country: ${dataFilm.Country}</p>
-                <p>Rating: <span>${dataFilm.imdbRating}</span></p> 
+                <h2 class="about-card-title">${title}</h2>
+                <p>Year: ${year}</p>
+                <p>Runtime: ${runTime}</p>
+                <p>Country: ${country}</p>
+                <p>Rating: <span>${rating}</span></p> 
             `;
             listFilms[i].appendChild(cardAboutFilm);
         }
