@@ -2,6 +2,13 @@
     margin: 0;
 }
 
+a:active,
+a:hover,
+a{
+    text-decoration: none;
+    color: var(--white-color);
+}
+
 :root {
     --black-color : #000000;
     --white-color : #FFFFFF;
@@ -95,7 +102,7 @@ body{
 
 .body-container{
     position: relative;
-    min-height: 100vh;
+    min-height: calc(100vh - 200px);
     background: var(--gray-color);
 }
 
@@ -210,6 +217,51 @@ body{
     color: rgba(255,255,255,.2);
 }
 
+.footer{
+    max-width: 100%;
+    background: var(--black-color);
+}
+
+.footer-container{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-item{
+    font-size: 20px;
+    font-family: 'Inter-Regular';
+}
+
+.footer-item.rolling{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+
+.footer-item.rolling:hover{
+    filter: contrast(10%);
+}
+
+.footer-item.rolling{
+    height: 50px;
+    width: 139px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(./assets/img/logo-rsschool3.png);
+}
+
+.footer-item.github{
+    transition: 1s;
+}
+
+.footer-item.github:hover{
+    filter: contrast(10%);
+}
+
+
 @media (max-width: 768px) {
 
     .header-container{
@@ -225,6 +277,15 @@ body{
         height: auto;
         text-align: center;
         margin-top: 100px;
+    }
+
+    .footer-item{
+        font-size: 15px;
+    }
+
+    .footer-item.rolling{
+        height: 40px;
+        width: 111px;
     }
 }
 
