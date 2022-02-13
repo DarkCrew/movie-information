@@ -129,16 +129,7 @@ function loadFilmRating() {
             filmAboutInfo[i].classList.toggle('show');
         });
     }
-}
-
-// for test
-const filmCard = document.querySelector('.film-card');
-const filmAboutInfo = document.querySelector('.card-about-film');
-
-filmCard.addEventListener('click', function () {
-    filmAboutInfo.classList.toggle('show');
-});      
-
+}   
 
 // media
 
