@@ -52,6 +52,8 @@ async function loadMovies(searchName) {
     };
 }
 
+loadMovies('car');
+
 function displayListFilms(films) {
     filmsContainer.innerHTML = '';
     for (let i = 0; i < films.length; i++) {
