@@ -42,6 +42,7 @@ body{
 .header-title{
     text-transform: uppercase;
     font-family: 'Inter-Bold';
+    user-select: none;
 }
 .header-title span{
     color: var(--red-color);
@@ -120,6 +121,8 @@ body{
     min-height: 550px;
     width: 300px;
     background: var(--black-color);
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .film-card-image{
@@ -169,24 +172,23 @@ body{
 }
 
 .card-about-film{
-    display: none;
     position: absolute;
     height: 350px;
     width: 100%;
-    background: var(--black-color);
+    left: 0;
+    right: 0;
     bottom: 0;
+    background: var(--black-color);
     padding: 20px 20px;
     box-sizing: border-box;
     font-size: 17px;
     font-family: 'Inter-Regular';
-    opacity: 0;
+    transform: translateY(101%);
+    transition: transform .3s ease-in-out;
 }
 
 .card-about-film.show{
-    display: block;
-    bottom: 0;
-    opacity: 1;
-    transition: 1s;
+    transform: translateY(0);
 }
 
 .about-card-title{
